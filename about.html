@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>About StageCraft · Nairobi’s Dance Crew and Solo Dancer Booking Platform</title>
+<meta name="description" content="StageCraft connects Nairobi’s vetted dance crews and solo dancers with clients who need them for shows, events, and private performances." />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>tailwind.config={theme:{extend:{colors:{ink:"#06161e",deep:"#0b2230",navy:"#1e2a3a",coral:"#e4572e",teal:"#17bebb"},fontFamily:{cond:["Anton","Impact","sans-serif"],body:["'DM Sans'","sans-serif"]}}}}</script>
+<style>
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'DM Sans',sans-serif;background:#06161e;color:#fff}
+.metal{background:linear-gradient(180deg,#fff 20%,#cfd8dc 50%,#8fa3ad 62%,#fff 80%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hd{font-family:Anton,Impact,sans-serif;text-transform:uppercase;line-height:.95;letter-spacing:.01em;font-size:clamp(2.4rem,7vw,4.6rem)}
+.lbl{font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:#17bebb;display:flex;align-items:center;gap:.6rem}
+.lbl::before{content:"";width:2rem;height:2px;background:#e4572e}
+.sec{position:relative;overflow:hidden}.sec>.in{position:relative;z-index:2;max-width:72rem;margin:0 auto;padding:5.5rem 1.25rem}
+.glow{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(23,190,187,.22),transparent 60%);pointer-events:none}
+.ph{background:linear-gradient(135deg,#0b2230,#17bebb 60%,#e4572e);position:relative;overflow:hidden}
+.ph img{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;transition:transform .8s}
+.card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:1.5rem;transition:border-color .3s,transform .25s ease-out;will-change:transform}
+.card:hover{border-color:#17bebb}.card:hover .ph img{transform:scale(1.08)}
+.nav{transition:background .3s,box-shadow .3s}.nav.solid{background:rgba(6,22,30,.93);backdrop-filter:blur(12px);box-shadow:0 8px 30px rgba(0,0,0,.35)}
+.nl{position:relative;padding:.4rem 0}.nl::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:#e4572e;transform:scaleX(0);transform-origin:left;transition:transform .25s}.nl:hover::after,.nl[aria-current]::after{transform:scaleX(1)}
+a:focus-visible,button:focus-visible{outline:3px solid #17bebb;outline-offset:3px;border-radius:8px}
+.grade{background:linear-gradient(180deg,rgba(6,22,30,.85),rgba(6,30,38,.4) 40%,rgba(6,22,30,.8) 80%,#06161e)}
+.beams{position:absolute;inset:0;overflow:hidden;pointer-events:none;mix-blend-mode:screen}
+.beams i{position:absolute;top:-10%;width:22vw;height:120%;background:linear-gradient(180deg,rgba(120,255,240,.38),transparent 75%);transform-origin:top;filter:blur(14px);animation:sw 7s ease-in-out infinite alternate}
+.beams i:nth-child(1){left:8%;transform:rotate(-18deg)}.beams i:nth-child(2){left:30%;transform:rotate(-6deg);animation-delay:-2s}.beams i:nth-child(3){left:52%;transform:rotate(8deg);animation-delay:-4s}.beams i:nth-child(4){left:74%;transform:rotate(20deg);animation-delay:-1s}
+@keyframes sw{from{opacity:.2;translate:-4vw 0}to{opacity:.8;translate:4vw 0}}
+#spot{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle 280px at var(--x,50%) var(--y,40%),rgba(255,255,255,.16),transparent 70%)}
+/* letter-by-letter dance entrance */
+.ch{display:inline-block;opacity:0;transform:translateY(60%) rotate(8deg);animation:pop .7s cubic-bezier(.2,1.4,.4,1) forwards;animation-delay:calc(.5s + var(--i)*45ms)}
+@keyframes pop{to{opacity:1;transform:none}}
+.hi{opacity:0;animation:fd .8s forwards}@keyframes fd{to{opacity:1}}
+.glowbtn{animation:gb 2.4s infinite}@keyframes gb{0%,100%{box-shadow:0 0 0 0 rgba(228,87,46,.55)}50%{box-shadow:0 0 0 14px rgba(228,87,46,0)}}
+/* equalizer beat bars */
+.eq{display:inline-flex;gap:3px;align-items:flex-end;height:16px}.eq b{width:3px;background:#e4572e;border-radius:2px;animation:eq 1s ease-in-out infinite alternate}
+.eq b:nth-child(1){height:40%}.eq b:nth-child(2){height:100%;animation-delay:-.3s}.eq b:nth-child(3){height:60%;animation-delay:-.6s}.eq b:nth-child(4){height:85%;animation-delay:-.15s}
+@keyframes eq{to{transform:scaleY(.3)}}.eq b{transform-origin:bottom}
+/* outline marquees moving in opposite directions */
+.mq{display:flex;width:max-content;gap:2.5rem;animation:mq 30s linear infinite}.mq.rev{animation-direction:reverse}@keyframes mq{to{transform:translateX(-50%)}}
+.out{-webkit-text-stroke:1.5px rgba(255,255,255,.55);color:transparent}
+/* reveals */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}.rv.on{opacity:1;transform:none}
+.clip{clip-path:inset(0);transition:clip-path 1.1s cubic-bezier(.7,0,.2,1)}.clip.on{clip-path:inset(0)}
+/* gentle sway for collage */
+.sway{animation:swy 6s ease-in-out infinite alternate}@keyframes swy{from{rotate:-2deg;translate:0 0}to{rotate:2deg;translate:0 -12px}}
+/* style tiles */
+.tiles{display:flex;flex-direction:column;gap:.75rem;height:78rem}
+.tile{flex:1;transition:flex .6s cubic-bezier(.2,.8,.2,1);border-radius:1.5rem;min-width:0}
+.tile .t{position:absolute;left:1.25rem;bottom:1.25rem;right:1rem}
+@media(min-width:768px){.tiles{flex-direction:row;height:30rem}.tile:hover,.tile:focus-within{flex:3}}
+#bar{position:fixed;top:0;left:0;height:3px;width:100%;background:#e4572e;transform:scaleX(0);transform-origin:left;z-index:60}
+.step::before{content:"";position:absolute;top:1.6rem;left:3.5rem;right:-1.25rem;height:2px;background:repeating-linear-gradient(90deg,#17bebb 0 6px,transparent 6px 12px)}.step:last-child::before{display:none}
+@media(max-width:767px){.step::before{display:none}}
+@media(prefers-reduced-motion:reduce){.beams i,.glowbtn,.mq,.sway,.eq b{animation:none}.ch,.hi{animation:none;opacity:1;transform:none}.rv{opacity:1;transform:none;transition:none}.clip{clip-path:none;transition:none}#spot{display:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body class="antialiased overflow-x-hidden">
+<div id="bar" aria-hidden="true"></div>
+
+<header id="nav" class="nav fixed top-0 inset-x-0 z-50">
+  <div class="max-w-6xl mx-auto px-5 h-[72px] flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3" aria-label="StageCraft home"><span class="logo"></span><span class="font-cond text-2xl tracking-[.12em] uppercase">StageCraft</span></a>
+    <nav class="hidden lg:flex items-center gap-7 text-sm text-white/85" aria-label="Main" id="links"></nav>
+    <div class="hidden lg:flex gap-3 text-sm"><a href="get-started.html" class="border border-white/50 px-5 py-2.5 rounded-full hover:bg-white hover:text-ink transition">Register</a><a href="contact.html" class="bg-coral px-5 py-2.5 rounded-full hover:-translate-y-0.5 transition">Book a dancer</a></div>
+    <button id="mb" class="lg:hidden w-11 h-11 rounded-full border border-white/30 grid place-items-center" aria-label="Open menu" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path id="ico" d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+  <div id="mm" class="lg:hidden bg-ink/97 px-5 pb-6" hidden><div id="mlinks" class="flex flex-col"></div><div class="flex gap-3 mt-4"><a href="get-started.html" class="flex-1 text-center border border-white/50 rounded-full py-3">Register</a><a href="contact.html" class="flex-1 text-center bg-coral rounded-full py-3">Book a dancer</a></div></div>
+</header>
+
+<main>
+<!-- PAGE HEADER -->
+<section id="hero" class="sec bg-ink border-b border-white/10">
+  <div class="ph absolute inset-0" data-img="head" data-par=".2"></div>
+  <div class="absolute inset-0 grade"></div><div class="beams" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div id="spot" aria-hidden="true"></div>
+  <div class="relative z-10 max-w-6xl mx-auto w-full px-5 pt-36 pb-16 md:pt-44 md:pb-20">
+    <nav aria-label="Breadcrumb" class="hi text-sm text-white/70" style="animation-delay:.1s"><a href="index.html" class="hover:text-teal">Home</a> <span class="mx-2 text-coral">/</span> <span class="text-white" aria-current="page">About</span></nav>
+    <h1 class="mt-5 font-cond uppercase leading-[.92] metal" style="font-size:clamp(3.4rem,13vw,8.5rem);filter:drop-shadow(0 6px 24px rgba(0,0,0,.55))" aria-label="About StageCraft"><span data-split="About StageCraft" aria-hidden="true"></span></h1>
+    <p class="hi mt-6 max-w-xl text-base sm:text-lg text-white/85 leading-relaxed flex items-start gap-4" style="animation-delay:1.1s"><span class="eq mt-2 shrink-0" aria-hidden="true"><b></b><b></b><b></b><b></b></span><span>We connect Nairobi’s vetted dance crews and solo dancers with the clients who need them, and make sure everyone is paid and rated fairly.</span></p>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<section class="bg-coral overflow-hidden py-3" aria-hidden="true"><div class="mq font-cond uppercase text-2xl md:text-3xl" id="mq1"></div></section>
+
+<!-- STORY -->
+<section id="story" class="sec bg-deep"><div class="in grid md:grid-cols-2 gap-14 items-center">
+  <div class="rv">
+    <p class="lbl">Our story</p>
+    <h2 class="hd metal mt-4">Great dancers were hard to find and harder to book</h2>
+    <!-- EDIT: replace this copy with your real founding story. -->
+    <div class="mt-6 space-y-4 text-white/75 leading-relaxed max-w-lg">
+      <p>Nairobi has no shortage of talent. Crews rehearse in studios across the city, and solo dancers light up stages every weekend. But booking them meant chasing numbers, guessing at prices, and hoping the date held.</p>
+      <p>StageCraft puts it all in one place. Clients see who is free and what they cost. Dancers set their own prices and open dates. A 50% deposit locks the booking, so both sides can plan with confidence.</p>
+    </div>
+  </div>
+  <div class="relative h-[34rem] sm:h-[38rem]">
+    <div class="clip ph absolute right-0 top-0 w-[68%] h-[72%] rounded-3xl" data-img="a" role="img" aria-label="Dancer mid-leap on stage"></div>
+    <div class="clip ph absolute left-0 bottom-0 w-[52%] h-[48%] rounded-3xl sway border-4 border-deep" data-img="b" role="img" aria-label="Crew rehearsing together"></div>
+    <div class="clip ph absolute right-[6%] bottom-[2%] w-[34%] h-[28%] rounded-3xl sway border-4 border-deep" style="animation-delay:-3s" data-img="c" role="img" aria-label="Contemporary dancer in motion"></div>
+  </div>
+</div></section>
+
+<!-- STATS -->
+<section class="bg-ink border-y border-white/10"><div class="max-w-6xl mx-auto px-5 py-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center" id="stats"></div></section>
+
+<!-- STYLES -->
+<section class="sec bg-deep"><div class="in">
+  <div class="rv max-w-2xl"><p class="lbl">Dance styles</p><h2 class="hd metal mt-4">Every rhythm Nairobi moves to</h2></div>
+  <div class="tiles mt-12" id="tiles"></div>
+</div></section>
+
+<!-- TWO SIDES -->
+<section class="sec bg-ink"><div class="glow"></div><div class="in">
+  <div class="rv max-w-2xl"><p class="lbl">Who we serve</p><h2 class="hd metal mt-4">One platform, two sides of the stage</h2></div>
+  <div class="grid md:grid-cols-2 gap-6 mt-12">
+    <article class="rv card tilt overflow-hidden">
+      <div class="ph h-64" data-img="crowd" data-par=".12"><div class="absolute inset-0 bg-gradient-to-t from-ink/85 to-transparent"></div></div>
+      <div class="p-8"><h3 class="font-cond uppercase text-3xl tracking-wide">For clients</h3>
+        <p class="mt-3 text-white/70 leading-relaxed">Planning a gala, wedding, graduation, or private party? Browse verified performers, watch their reels, and book in a few taps.</p>
+        <ul class="mt-5 space-y-3 text-sm text-white/80"><li class="flex gap-3"><span class="text-teal">✓</span>Filter by style, price, area, and open dates</li><li class="flex gap-3"><span class="text-teal">✓</span>Pay 50% to lock your date, the rest after the show</li><li class="flex gap-3"><span class="text-teal">✓</span>Free to book, with a 3% maintenance fee per gig</li></ul>
+        <a href="contact.html" class="inline-block mt-7 bg-coral font-medium px-7 py-3.5 rounded-full hover:-translate-y-0.5 transition">Book a dancer</a></div>
+    </article>
+    <article class="rv card tilt overflow-hidden" style="transition-delay:.1s">
+      <div class="ph h-64" data-img="e" data-par=".12"><div class="absolute inset-0 bg-gradient-to-t from-ink/85 to-transparent"></div></div>
+      <div class="p-8"><h3 class="font-cond uppercase text-3xl tracking-wide">For dancers and crews</h3>
+        <p class="mt-3 text-white/70 leading-relaxed">Spend your time on choreography, not chasing enquiries. Build a profile, set your terms, and let clients come to you.</p>
+        <ul class="mt-5 space-y-3 text-sm text-white/80"><li class="flex gap-3"><span class="text-teal">✓</span>Your own profile and reel</li><li class="flex gap-3"><span class="text-teal">✓</span>Set your prices, packages, and availability</li><li class="flex gap-3"><span class="text-teal">✓</span>Deposit released early so you can plan</li></ul>
+        <a href="get-started.html" class="inline-block mt-7 border border-white/60 font-medium px-7 py-3.5 rounded-full hover:bg-white hover:text-ink transition">Register</a></div>
+    </article>
+  </div>
+</div></section>
+
+<!-- HOW A BOOKING WORKS -->
+<section class="sec bg-deep"><div class="in">
+  <div class="rv max-w-2xl"><p class="lbl">How it works</p><h2 class="hd metal mt-4">From first search to final applause</h2></div>
+  <div class="grid md:grid-cols-4 gap-8 mt-14" id="steps"></div>
+</div></section>
+
+<!-- VALUES -->
+<section class="sec bg-ink"><div class="glow"></div><div class="in grid md:grid-cols-5 gap-12">
+  <div class="md:col-span-2"><div class="md:sticky md:top-28">
+    <div class="rv"><p class="lbl">What we stand for</p><h2 class="hd metal mt-4">Four promises we keep</h2></div>
+    <div class="clip ph rounded-3xl aspect-[4/3] mt-8 hidden md:block" data-img="d" data-par=".1" role="img" aria-label="Dancers under stage lights"></div>
+  </div></div>
+  <div class="md:col-span-3 divide-y divide-white/10 border-y border-white/10" id="values"></div>
+</div></section>
+
+<!-- GALLERY STRIP -->
+<section class="bg-deep overflow-hidden py-10" aria-hidden="true"><div class="mq rev font-cond uppercase text-5xl md:text-7xl out" id="mq2"></div></section>
+<section class="sec bg-deep"><div class="max-w-6xl mx-auto px-5 pb-20">
+  <div class="grid grid-cols-2 md:grid-cols-4 auto-rows-[150px] md:auto-rows-[200px] gap-3" id="gal"></div>
+</div></section>
+
+<!-- TEAM -->
+<section class="sec bg-ink"><div class="in">
+  <div class="rv max-w-2xl"><p class="lbl">The team</p><h2 class="hd metal mt-4">The people behind the platform</h2></div>
+  <!-- EDIT: replace names, roles, and photos with your real team. -->
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12" id="team"></div>
+</div></section>
+
+<!-- QUOTE -->
+<section class="sec bg-deep"><div class="in max-w-4xl text-center rv">
+  <p class="text-coral text-xl">★★★★★</p>
+  <blockquote class="font-cond uppercase mt-5 leading-tight" style="font-size:clamp(1.6rem,4.5vw,3rem)">The deposit made planning easy, and the crew arrived early and fully prepared. Our guests are still talking about it.</blockquote>
+  <p class="mt-6 text-sm text-white/60">Event organiser, Westlands</p>
+</div></section>
+
+<!-- CTA -->
+<section class="sec bg-ink text-center">
+  <div class="ph absolute inset-0 opacity-45" data-img="crowd" data-par=".15" role="img" aria-label="Audience in front of a lit stage"></div><div class="absolute inset-0 bg-ink/70"></div><div class="beams" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="in rv max-w-4xl"><h2 class="hd metal" style="font-size:clamp(2.8rem,9vw,6rem)">Ready for your next show?</h2>
+  <p class="mt-5 text-white/80 max-w-xl mx-auto">Book a verified crew for your event, or register and start getting booked.</p>
+  <div class="flex flex-col sm:flex-row gap-3 justify-center mt-9"><a href="contact.html" class="glowbtn bg-coral font-medium px-8 py-4 rounded-full hover:-translate-y-0.5 transition">Book a dancer</a><a href="get-started.html" class="border border-white/60 font-medium px-8 py-4 rounded-full hover:bg-white hover:text-ink transition">Register your crew</a></div></div>
+</section>
+</main>
+
+<footer class="bg-ink border-t border-white/10"><div class="max-w-6xl mx-auto px-5 py-14 grid md:grid-cols-4 gap-10 text-sm text-white/70">
+  <div class="md:col-span-2"><a href="index.html" class="flex items-center gap-3 text-white"><span class="logo"></span><span class="font-cond text-2xl tracking-[.12em] uppercase">StageCraft</span></a><p class="mt-4 max-w-sm leading-relaxed">Book vetted dance crews and solo dancers in Nairobi for shows, events, and private performances.</p></div>
+  <div><p class="font-cond uppercase tracking-wider text-white text-lg">Explore</p><div class="mt-3 flex flex-col gap-2"><a href="about.html" class="hover:text-teal">About</a><a href="index.html#dancers" class="hover:text-teal">Dancers</a><a href="classes.html" class="hover:text-teal">Classes</a><a href="gallery.html" class="hover:text-teal">Gallery</a></div></div>
+  <div><p class="font-cond uppercase tracking-wider text-white text-lg">Get started</p><div class="mt-3 flex flex-col gap-2"><a href="contact.html" class="hover:text-teal">Book a dancer</a><a href="get-started.html" class="hover:text-teal">Register</a><a href="contact.html" class="hover:text-teal">Contact</a><a href="terms.html" class="hover:text-teal">Terms</a><a href="policies.html" class="hover:text-teal">Policies</a><a href="terms.html#privacy" class="hover:text-teal">Privacy</a></div></div>
+</div><p class="text-center text-xs text-white/40 pb-8">© 2026 StageCraft · Nairobi, Kenya</p></footer>
+
+<script>
+const U=i=>`https://images.unsplash.com/${i}?auto=format&fit=crop&w=1200&q=80`;
+// Swap any image here. All Unsplash photo ids live in this one map.
+const V=["photo-1767979350317-1fd33f8db124","photo-1756013797421-0dedafc473af","photo-1542401520-748c0bec181e","photo-1617281822114-9541b921a880"];
+// Each key lists image ids in order of preference. If one fails to load, the next is tried; if all fail the gradient stays.
+const IMG={head:[V[3],V[0]],a:[V[0],V[2]],b:[V[2],V[3]],c:[V[1],V[0]],d:["photo-1504609813442-a8924e83f76e",V[1]],e:["photo-1535525153412-5a42439a210d",V[3]],f:["photo-1429962714451-bb934ecdc4ec",V[1]],g:["photo-1470229722913-7c0e2dbbafd3",V[2]],crowd:["photo-1470229722913-7c0e2dbbafd3",V[0]]};
+const im=(k,alt="")=>`<img data-k="${k}" data-i="0" loading="${k=="head"?"eager":"lazy"}" src="${U(IMG[k][0])}" alt="${alt}">`;
+addEventListener("error",e=>{const t=e.target;if(t.tagName!="IMG"||!t.dataset.k)return;const l=IMG[t.dataset.k],i=+t.dataset.i+1;if(i<l.length){t.dataset.i=i;t.src=U(l[i])}else t.remove()},true);
+const $=id=>document.getElementById(id),RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+document.querySelectorAll("[data-img]").forEach(e=>e.insertAdjacentHTML("afterbegin",im(e.dataset.img)));
+
+// nav
+const L=[["Home","index.html"],["About","about.html"],["Dancers","index.html#dancers"],["Classes","classes.html"],["Gallery","gallery.html"],["Pricing","index.html#pricing"],["Contact","contact.html"]];
+const cur=l=>l[1]==="about.html"?' aria-current="page"':'';
+$("links").innerHTML=L.map(l=>`<a class="nl" href="${l[1]}"${cur(l)}>${l[0]}</a>`).join("");
+$("mlinks").innerHTML=L.map(l=>`<a class="py-3.5 border-b border-white/10" href="${l[1]}"${cur(l)}>${l[0]}</a>`).join("");
+
+// content
+const S=["Hip-Hop","Afrobeats","Contemporary","Traditional","Dancehall"];
+$("mq1").innerHTML=Array(4).fill(S.map(s=>`<span class="py-1">${s}</span><span>✦</span>`).join("")).join("");
+$("mq2").innerHTML=Array(4).fill(["Move","Book","Perform","Repeat"].map(s=>`<span class="${s=="Perform"?"metal":""}">${s}</span>`).join("")).join("");
+$("stats").innerHTML=[["120+","Verified dancers and crews"],["480","Shows booked"],["4.8★","Average rating"],["50%","Deposit to book"]].map(s=>`<div class="rv"><p class="font-cond text-4xl md:text-5xl metal" data-n="${s[0]}">${s[0]}</p><p class="text-sm text-white/60 mt-1">${s[1]}</p></div>`).join("");
+$("tiles").innerHTML=[["Hip-Hop","Battles, shows, and stage","b"],["Afrobeats","Grooves and crowd energy","a"],["Contemporary","Story-led choreography","c"],["Traditional","Cultural and heritage pieces","f"],["Dancehall","High-energy party sets","d"]].map(s=>`<a href="index.html#dancers" class="tile ph block min-h-[11rem]">${im(s[2],s[0])}<span class="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent"></span><span class="t"><span class="block font-cond uppercase text-2xl">${s[0]}</span><span class="block text-xs text-white/75 mt-1">${s[1]}</span></span></a>`).join("");
+$("steps").innerHTML=[["Find your dancers","Filter by style, price, area, and open dates. Watch the reels first."],["Request your date","Pick a package and time from live availability, then add venue and audience size."],["Pay 50% to confirm","The deposit locks the date. Dancers get their share early."],["Pay the balance, rate","Settle after the show and rate the dancers. Only completed bookings can review."]].map((s,i)=>`<div class="rv step relative" style="transition-delay:${i*.12}s"><span class="relative z-10 grid place-items-center w-12 h-12 rounded-full bg-coral font-cond text-xl">${i+1}</span><h3 class="font-semibold text-lg mt-5">${s[0]}</h3><p class="text-sm text-white/70 mt-2 leading-relaxed">${s[1]}</p></div>`).join("");
+$("values").innerHTML=[["Every dancer is vetted","Crews and solo dancers are verified before they are listed, so you know who is turning up."],["Dancers are paid early","The deposit is released early so dancers can sort costumes, transport, and rehearsal."],["Reviews are earned","Only completed bookings can leave a rating, so every review comes from a real show."],["Pricing is clear","You see the price up front. Registration fees and the 3% per-gig fee are published."]].map((v,i)=>`<div class="rv py-8" style="transition-delay:${i*.08}s"><h3 class="font-cond uppercase text-2xl tracking-wide">${v[0]}</h3><p class="mt-2 text-white/70 leading-relaxed max-w-md">${v[1]}</p></div>`).join("");
+$("gal").innerHTML=[["a","col-span-2 row-span-2"],["g",""],["b",""],["c","row-span-2"],["e",""],["f","col-span-2"]].map(g=>`<div class="clip ph rounded-2xl ${g[1]}">${im(g[0],"StageCraft performance")}</div>`).join("");
+$("team").innerHTML=[["Your Name","Founder","c"],["Team Member","Dancer Relations","d"],["Team Member","Events and Bookings","b"]].map((t,i)=>`<article class="rv card tilt overflow-hidden" style="transition-delay:${i*.1}s"><div class="ph aspect-[4/3]">${im(t[2],t[0])}<div class="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent"></div></div><div class="p-6"><h3 class="font-cond uppercase text-2xl tracking-wide">${t[0]}</h3><p class="text-sm text-teal mt-1">${t[1]}</p></div></article>`).join("");
+
+// logo
+document.querySelectorAll(".logo").forEach(e=>{e.outerHTML=`<svg width="34" height="34" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="rgba(23,190,187,.15)" stroke="#17bebb" stroke-width="2.2"/><path d="M12 27c3-1 4-9 8-13 4 4 5 12 8 13M20 14v-4" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><circle cx="20" cy="9" r="1.8" fill="#e4572e"/></svg>`});
+
+// headline: split into letters that pop in like a dance routine
+let n=0;document.querySelectorAll("[data-split]").forEach(e=>{e.innerHTML=[...e.dataset.split].map(c=>c==" "?" ":`<span class="ch${e.closest(".metal")||e.classList.contains("metal")?" metal":""}" style="--i:${n++}">${c}</span>`).join("")});
+
+// nav + progress
+const nav=$("nav"),mm=$("mm"),mb=$("mb"),ico=$("ico"),bar=$("bar"),sync=()=>nav.classList.toggle("solid",scrollY>40||!mm.hidden);
+const setM=o=>{mm.hidden=!o;mb.setAttribute("aria-expanded",o);mb.setAttribute("aria-label",o?"Close menu":"Open menu");ico.setAttribute("d",o?"M6 6l12 12M18 6L6 18":"M4 7h16M4 12h16M4 17h16");sync()};
+mb.onclick=()=>setM(mm.hidden);mm.onclick=e=>{if(e.target.tagName=="A")setM(false)};
+
+// parallax: images drift at different speeds as you scroll
+const par=[...document.querySelectorAll("[data-par]")];
+const tick=()=>{sync();bar.style.transform=`scaleX(${scrollY/(document.body.scrollHeight-innerHeight||1)})`;
+ if(!RM)par.forEach(p=>{const r=p.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;const im=p.querySelector("img");if(im)im.style.transform=`translateY(${(r.top+r.height/2-innerHeight/2)*-p.dataset.par}px)`})};
+addEventListener("scroll",tick,{passive:true});tick();
+
+// hero spotlight follows the pointer
+const hero=$("hero");if(!RM)hero.addEventListener("pointermove",e=>{const r=hero.getBoundingClientRect();hero.style.setProperty("--x",e.clientX-r.left+"px");hero.style.setProperty("--y",e.clientY-r.top+"px")});
+
+// 3D tilt on cards
+if(!RM&&matchMedia("(hover:hover)").matches)document.querySelectorAll(".tilt").forEach(c=>{c.addEventListener("pointermove",e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(900px) rotateY(${x*7}deg) rotateX(${-y*7}deg) translateY(-6px)`});c.addEventListener("pointerleave",()=>c.style.transform="")});
+
+// reveals + counters
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add("on");const n=e.target.querySelector("[data-n]");if(n&&!n.d){n.d=1;const t=n.dataset.n,m=t.match(/[\d.]+/)[0],x=parseFloat(m),f=m.includes(".")?1:0;let k=0;const id=setInterval(()=>{k+=.04;if(k>=1){k=1;clearInterval(id)}n.textContent=t.replace(m,(x*(1-Math.pow(1-k,3))).toFixed(f))},30)}io.unobserve(e.target)}),{threshold:.15});
+document.querySelectorAll(".rv,.clip").forEach(e=>io.observe(e));
+</script>
+</body>
+</html>
